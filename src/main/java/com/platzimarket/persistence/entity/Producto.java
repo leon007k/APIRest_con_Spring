@@ -35,6 +35,14 @@ public class Producto {
         return idProducto;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     public void setIdProducto(Long idProducto) {
         this.idProducto = idProducto;
     }
