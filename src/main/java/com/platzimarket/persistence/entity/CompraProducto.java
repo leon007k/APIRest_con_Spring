@@ -14,7 +14,12 @@ public class CompraProducto {
 
     private Boolean estado;
 
+    /*
+    * Con MapsId, cuando comprasproducto valla a guardar en cascada,
+    * sabra a que clave primaria pertence cada uno de los productos en una compra
+    * */
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
@@ -24,6 +29,22 @@ public class CompraProducto {
 
     public Integer getCantidad() {
         return cantidad;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public void setCantidad(Integer cantidad) {

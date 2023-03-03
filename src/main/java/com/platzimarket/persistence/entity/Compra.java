@@ -30,8 +30,28 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    /*
+    * Con cascade indicamos que todos los procesos que encuentre la bd de una compra
+    * van a incluir en cascada sus productos
+    * */
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<CompraProducto> productos;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
+    }
 
     public Long getIdCompra() {
         return idCompra;
