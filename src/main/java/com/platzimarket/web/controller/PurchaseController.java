@@ -25,10 +25,10 @@ public class PurchaseController {
     private PurchaseService purchaseService;
 
     @Operation(summary = "Get All purchases")
-    /*@ApiResponse(responseCode = "200", description = "Successful operation",
+    @ApiResponse(responseCode = "200", description = "Successful operation",
             content = {@Content(mediaType = "application/json", array = @ArraySchema(
                     schema = @Schema(implementation = Purchase.class)
-            ))})*/
+            ))})
     @GetMapping
     public ResponseEntity<List<Purchase>> getAll(){
         return new ResponseEntity<>(purchaseService.getAll(), HttpStatus.OK);
