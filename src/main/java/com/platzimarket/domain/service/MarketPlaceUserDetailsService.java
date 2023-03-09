@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 @Service
 public class MarketPlaceUserDetailsService implements UserDetailsService {
-    // * Create an encoder password with strenth16
+    // * Create an encoder password with strength 16
+    // ? https://docs.spring.io/spring-security/reference/features/authentication/password-storage.html#authentication-password-storage-boot-cli
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     String passwordEncoder = encoder.encode("Leo12leo");
 
