@@ -1,19 +1,19 @@
 package com.platzimarket.domain.dto;
 
+import java.io.Serializable;
+
 // * We ship the JWT
-public class AuthenticationResponse {
+public class AuthenticationResponse implements Serializable {
 
-    private String jwt;
+    private static final long serialVersionUID = -8091879091924046844L;
+    private final String jwtToken;
 
-    public AuthenticationResponse(String jwt) {
-        this.jwt = jwt;
+    public AuthenticationResponse(String jwtToken){
+        this.jwtToken = jwtToken;
     }
 
-    public String getJwt() {
-        return jwt;
+    public String getToken(){
+        return jwtToken;
     }
 
-    public void setJwt(String jwt) {
-        this.jwt = jwt;
-    }
 }
